@@ -26,6 +26,7 @@ jobs:
           mkdir -pv /var/www/html/mediawiki/images/
           mkdir -pv /var/www/html/mediawiki/extensions/
           mkdir -pv /var/www/html/mediawiki/resources/assets/
+          touch /var/www/html/mediawiki/resources/assets/file.tmp
       - name: Check that update script is not cause any errors
         run: |
-          bash update.sh
+          sudo bash update.sh
