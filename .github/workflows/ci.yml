@@ -30,3 +30,4 @@ jobs:
       - name: Check that update script is not cause any errors
         run: |
           sudo bash update.sh
+          ls /var/www/html/mediawiki/README.md
