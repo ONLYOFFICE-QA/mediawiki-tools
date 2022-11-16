@@ -1,0 +1,17 @@
+name: check
+on: [push]
+jobs:
+  shell-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run linter for shell files
+        run: shellcheck *.sh
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check markdown files using `markdownlint`
+        run: |
+          sudo npm install -g markdownlint-cli
+          markdownlint *.md
